@@ -34,6 +34,7 @@
   padding: 0;
   padding-top: 1rem;
   display: flex;
+  flex-wrap: wrap;
   background-color: rgba(0, 0, 0, 0.2);
 }
 .movie-details .main-info .cast ul li {

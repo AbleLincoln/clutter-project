@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Sidebar from './Sidebar';
+import Welcome from './Welcome';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/App.css';
 import MovieDetails from './MovieDetails';
@@ -13,6 +14,7 @@ class App extends Component {
           <div className="row">
             <div className="col-md-9">
               <Switch>
+                <Route path="/" exact component={Welcome} />
                 <Route
                   path="/:id"
                   component={MovieDetails}
