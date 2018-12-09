@@ -1,0 +1,35 @@
+.movie-nav {
+  display: flex;
+  border-bottom: 2px solid #00293c;
+  transition: all 0.2s;
+  cursor: pointer;
+  color: #00293c;
+}
+.movie-nav:hover {
+  background-color: rgba(0, 41, 60, 0.25);
+}
+.movie-nav a {
+  display: flex;
+  width: 100%;
+  padding: 20px 15px;
+  color: white;
+  text-decoration: none;
+}
+.movie-nav a:hover {
+  text-decoration: none;
+  color: white;
+}
+.movie-nav a.active {
+  background-color: rgba(0, 41, 60, 0.35);
+}
+.movie-nav a h2 {
+  font-size: 1.5rem;
+}
+.movie-nav a img {
+  height: 180px;
+}
+.movie-nav a .info {
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=MovieNav.css.map */

@@ -1,0 +1,32 @@
+.sidebar.col-md-3 {
+  background-color: #189ad3;
+  padding: 15px;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+}
+.sidebar.col-md-3 .input-group {
+  background-color: #00293c;
+  padding: 15px 20px;
+}
+.sidebar.col-md-3 .input-group input {
+  flex-grow: 1;
+}
+.sidebar.col-md-3 .input-group .btn-primary {
+  background-color: #189ad3;
+  border-color: #189ad3;
+  color: white;
+}
+.sidebar.col-md-3 .sidebar__movies {
+  padding-bottom: 40px;
+  height: 100%;
+  overflow: scroll;
+}
+.sidebar.col-md-3 .sidebar__movies ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*# sourceMappingURL=Sidebar.css.map */

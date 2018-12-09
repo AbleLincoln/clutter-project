@@ -1,0 +1,34 @@
+@import variables
+
+.movie-nav
+  display: flex
+  border-bottom: 2px solid $darkest-blue
+  transition: all 0.2s
+  cursor: pointer
+  color: $darkest-blue
+
+  &:hover
+    background-color: transparentize($darkest-blue, 0.75)
+
+  a
+    display: flex
+    width: 100%
+    padding: 20px 15px
+    color: white
+    text-decoration: none
+
+    &:hover
+      text-decoration: none
+      color: white
+
+    &.active
+      background-color: transparentize($darkest-blue, 0.65)
+
+    h2
+      font-size: 1.5rem
+
+    img
+      height: 180px
+
+    .info
+      margin-left: 10px

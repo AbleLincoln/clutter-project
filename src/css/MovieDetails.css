@@ -1,0 +1,70 @@
+.movie-details {
+  padding: 25px 15px;
+}
+.movie-details .bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  filter: blur(100px);
+}
+.movie-details .poster img {
+  width: 100%;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);
+}
+.movie-details .main-info h1.title {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+}
+.movie-details .main-info p.overview {
+  background-color: #eee;
+  padding: 15px 20px;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.movie-details .main-info .cast h3 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+}
+.movie-details .main-info .cast ul {
+  list-style: none;
+  padding: 0;
+  padding-top: 1rem;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.movie-details .main-info .cast ul li {
+  flex: 1 0 auto;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.movie-details .main-info .cast ul li .character {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  background-color: #eee;
+  color: #00293c;
+}
+.movie-details .main-info .cast ul li:hover .character {
+  display: block;
+}
+.movie-details .main-info .cast ul li .profile-pic {
+  height: 120px;
+  width: 120px;
+  overflow: hidden;
+  border-radius: 100%;
+  margin: auto;
+}
+.movie-details .main-info .cast ul li .profile-pic img {
+  width: 120px;
+  transform: translateY(-20px);
+}
+
+/*# sourceMappingURL=MovieDetails.css.map */
