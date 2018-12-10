@@ -61,7 +61,7 @@ export default class MovieDetails extends Component {
   renderCastMember = actor => (
     <li key={actor.tmdb_id}>
       <div className="profile-pic">
-        <img src={`${IMG_URL}/${actor.profile_path}`} alt={actor.name} />
+        <img src={`${IMG_URL}/${actor.profile_path}`} alt="" />
       </div>
       <p className="mt-1">{actor.name}</p>
       <p className="character">{actor.character}</p>
