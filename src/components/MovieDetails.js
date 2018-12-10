@@ -65,7 +65,10 @@ export default class MovieDetails extends Component {
         </div>
         <div className="col-md-8 main-info">
           <h1 className="title mb-4 mt-2">
-            {movie.title} ({moment(movie.release_date).format('YYYY')})
+            {movie.title}{' '}
+            <span className="small">
+              ({moment(movie.release_date).format('YYYY')})
+            </span>
           </h1>
           <p className="overview">{movie.overview}</p>
           {this.state.castMembers.length === 0
