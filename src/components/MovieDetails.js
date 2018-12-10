@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { getCast, IMG_URL } from '../api';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { getMovie, getCast, IMG_URL } from '../api';
 import '../css/MovieDetails.css';
 
 export default class MovieDetails extends Component {
@@ -11,8 +13,21 @@ export default class MovieDetails extends Component {
   };
 
   state = {
+    movie: this.props.location.state ? this.props.location.state.movie : {},
     castMembers: [],
   };
+
+  constructor(props) {
+    super(props);
+    console.log(this.state);
+    if (!props.location.state) {
+      // console.log(state);
+      getMovie(this.props.match.params.id).then(res => {
+        this.setState({ movie: res.data });
+      });
+    }
+    this.fetchCastMembers();
+  }
 
   componentDidMount() {
     this.fetchCastMembers();
@@ -20,12 +35,14 @@ export default class MovieDetails extends Component {
 
   componentDidUpdate(prevProps) {
     // need to get new cast members iff id param changes to new movie
-    if (prevProps.match.params.id !== this.props.match.params.id)
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.setState({ movie: this.props.location.state.movie });
       this.fetchCastMembers();
+    }
   }
 
   fetchCastMembers = () => {
-    getCast(this.props.location.state.movie.id).then(res =>
+    getCast(this.props.match.params.id).then(res =>
       this.setState({ castMembers: res.data })
     );
   };
@@ -53,7 +70,15 @@ export default class MovieDetails extends Component {
   );
 
   render() {
-    const { movie } = this.props.location.state;
+    // return null;
+    // if (!this.props.location.state) return <Welcome />;
+    const { movie } = this.state;
+    if (!movie.id)
+      return (
+        <h1 className="loading">
+          <FontAwesomeIcon icon={faCircleNotch} spin />
+        </h1>
+      );
     return (
       <div className="row movie-details">
         <div
