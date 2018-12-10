@@ -21,12 +21,10 @@ export default class MovieDetails extends Component {
     super(props);
     console.log(this.state);
     if (!props.location.state) {
-      // console.log(state);
       getMovie(this.props.match.params.id).then(res => {
         this.setState({ movie: res.data });
       });
     }
-    this.fetchCastMembers();
   }
 
   componentDidMount() {
@@ -36,6 +34,7 @@ export default class MovieDetails extends Component {
   componentDidUpdate(prevProps) {
     // need to get new cast members iff id param changes to new movie
     if (prevProps.match.params.id !== this.props.match.params.id) {
+      // eslint-disable-next-line
       this.setState({ movie: this.props.location.state.movie });
       this.fetchCastMembers();
     }
@@ -70,8 +69,6 @@ export default class MovieDetails extends Component {
   );
 
   render() {
-    // return null;
-    // if (!this.props.location.state) return <Welcome />;
     const { movie } = this.state;
     if (!movie.id)
       return (
